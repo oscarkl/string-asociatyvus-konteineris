@@ -8,6 +8,10 @@ int main() {
     multiset< pair<string, int>> zodziai;
     string data = "";
     string word = "";
+    string a = "\"a";
+    string symbol = "\"";
+    besymbol(a);
+    cout << a;
     vector <string> linkai;
     int eilesnr = 0;
     while (getline(fd, data))
@@ -23,7 +27,7 @@ int main() {
                 linkai.push_back(word);
             }
             if(isword(word)){
-                process_word(word);
+                besymbol(word);
                 zodziai.insert({ word, eilesnr });               
             }       
         }
@@ -51,11 +55,13 @@ int main() {
             kartai.push_back((*iter).second);
         }
     }
-    fr<<endl << "Liinkai";
-    
-    for (int i = 0; i < linkai.size(); i++) {
-    fr << "-----------------------------------------------------------------" << endl;
-    fr<<linkai[0]<<endl;
+    if (linkai.size() > 0) {
+        fr << endl << "Linkai";
+
+        for (int i = 0; i < linkai.size(); i++) {
+            fr << "-----------------------------------------------------------------" << endl;
+            fr << linkai[0] << endl;
+        }
     }
     fd.close();
     fr.close();
