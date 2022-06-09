@@ -24,7 +24,7 @@ using std::left;
 using std::setw;
 
 char mazosios(const char& c);
-void process_word(string& word);
+void besymbol(string& word);
 bool isletter(const char& r);
 bool isword(const string& word);
 bool isurl(const string& word);
